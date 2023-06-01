@@ -1,0 +1,12 @@
+<div class="container" *ngIf="car">
+  <h2 style="font-size: 40px;">Détails de la voiture:
+    <p style="font-size: 25px"> Marque: {{car.brand}}</p>
+    <p style="font-size: 25px"> Modele: {{car.model}}</p>
+    <p style="font-size: 25px"> Année: {{car.modelYear}}</p>
+    <p style="font-size: 25px"> Kilométrage: {{car.numberOfKilometer}} km</p>
+    <p style="font-size: 25px"> Prix: {{car.price}} €</p>
+  </h2>
+  <div id="button-div">
+    <button type="button" class="back-button" routerLink="/">Retour aux voitures</button>
+  </div>
+</div>

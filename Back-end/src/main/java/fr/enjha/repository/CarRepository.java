@@ -17,6 +17,10 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
             "WHERE c.brand LIKE %:brand%" +
             "AND c.model LIKE %:model%" +
             "AND (c.modelYear BETWEEN :minModelYear AND :maxModelYear)" +
-            "AND (c.price BETWEEN :minPrice AND :maxPrice)")
-    Optional<List<Car>> findCarsByFilter(@Param("brand") String brand, @Param("model") String model, @Param("minModelYear") int minModelYear, @Param("maxModelYear") int MaxModelYear, @Param("minPrice") int minPrice, @Param("maxPrice") int maxPrice);
+            "AND (c.price BETWEEN :minPrice AND :maxPrice)" +
+            "AND (c.numberOfKilometer BETWEEN :minKm AND :maxKm)")
+    Optional<List<Car>> findCarsByFilter(@Param("brand") String brand, @Param("model") String model,
+                                         @Param("minModelYear") int minModelYear, @Param("maxModelYear") int MaxModelYear,
+                                         @Param("minPrice") int minPrice, @Param("maxPrice") int maxPrice,
+                                         @Param("minKm") int minKm, @Param("maxKm") int maxKm);
 }

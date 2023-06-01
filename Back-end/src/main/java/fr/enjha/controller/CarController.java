@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/cars")
 public class CarController {
 
     private final CarRepository repository;
@@ -17,21 +18,22 @@ public class CarController {
         this.repository = repository;
     }
 
-    @GetMapping("/cars")
+    @GetMapping
     List<Car> allCars() {
         return (List<Car>) repository.findAll();
     }
-    @GetMapping(value = "/cars/{id}")
+    @GetMapping(value = "/{id}")
     Optional<Car> getCarById(@PathVariable int id){
         return repository.findById(id);
     }
-    @GetMapping(value = "/cars/search")
+    @GetMapping(value = "/search")
     Optional<List<Car>> getCarsByFilter(@RequestParam("brand") String brand, @RequestParam("model") String model,
                                         @RequestParam("minModelyear") int minModelyear, @RequestParam("maxModelyear") int maxModelyear,
-                                        @RequestParam("minPrice") int minPrice, @RequestParam("maxPrice") int maxPrice){
-        return repository.findCarsByFilter(brand,model,minModelyear,maxModelyear,minPrice,maxPrice);
+                                        @RequestParam("minPrice") int minPrice, @RequestParam("maxPrice") int maxPrice,
+                                        @RequestParam("minKm") int minKm, @RequestParam("maxKm") int maxKm){
+        return repository.findCarsByFilter(brand,model,minModelyear,maxModelyear,minPrice,maxPrice,minKm,maxKm);
     }
-    @DeleteMapping("/cars/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deletePerson(@PathVariable int id) {
         repository.deleteById(id);

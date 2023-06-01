@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 style="font-size: 40px;">Liste des clients</h2>
+  <button type="button" class="success-button" id="add-customer" routerLink="/create">Créer un client</button>
+  <div id="customers-list">
+    <div id="customer" *ngFor="let car of cars">
+      <a id="fullName" routerLink="/{{car.id}}/">
+        {{car.brand}}
+      </a>
+      <label>
+        {{car.model}}
+      </label>
+    </div>
+  </div>
+</div>
