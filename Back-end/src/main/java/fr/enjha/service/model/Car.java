@@ -1,4 +1,4 @@
-package fr.yann.carent.service.model;
+package fr.enjha.service.model;
 
 
 import jakarta.persistence.*;
