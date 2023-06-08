@@ -2,7 +2,7 @@
 
 Dans un cadre personnel j'ai souhaité développer une application web, un système de location de voitures.
 Pour ce faire j'ai décidé d'utiliser 2 technologies: `Java` pour le back et `Angular` pour le front.
-De plus j'ai souhaité utiliser `Docker` pour le déploiement de la BDD.
+J'utilise `Docker` pour le déploiement de la BDD.
 
 Dans cette archive on pourra trouver:
   - Un premier dossier: Back-end -> Contient le projet java avec la création de l'api et des entités.
