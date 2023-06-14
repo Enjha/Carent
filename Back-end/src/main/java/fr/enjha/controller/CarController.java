@@ -33,6 +33,13 @@ public class CarController {
                                         @RequestParam("minKm") int minKm, @RequestParam("maxKm") int maxKm){
         return repository.findCarsByFilter(brand,model,minModelyear,maxModelyear,minPrice,maxPrice,minKm,maxKm);
     }
+    @PostMapping
+    public Car postCar(@RequestBody Car p) {
+        repository.save(p);
+        return p;
+    }
+
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deletePerson(@PathVariable int id) {

@@ -18,6 +18,6 @@ export class CarDetailComponent {
 
     this.carService
       .findOne(id)
-      .subscribe(cars => this.car = cars[0]);
+      .subscribe(response => this.car = response);
   }
 }

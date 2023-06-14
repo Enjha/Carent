@@ -1,0 +1,9 @@
+<div class="container">
+  <h2 style="font-size: 40px;">Création d'une voiture</h2>
+  <div id="button-div">
+    <button type="button" class="back-button" routerLink="/">Retour aux voitures</button>
+  </div>
+  <div id="form">
+    <app-car-form (onNewCar)="addCar($event)"></app-car-form>
+  </div>
+</div>

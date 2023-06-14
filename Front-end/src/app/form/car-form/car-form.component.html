@@ -1,0 +1,63 @@
+<form id="create-customer" (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div id="inputs">
+    <div class="input">
+      <label for="brand">Marque:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="brand"
+        formControlName="brand"
+        placeholder="ex: Audi ..."
+        id="brand"
+      />
+    </div>
+    <div class="input">
+      <label for="model">Model:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="model"
+        formControlName="model"
+        placeholder="ex: RS6 ..."
+        id="model"
+      />
+    </div>
+    <div class="input">
+      <label for="modelYear">Année du model:</label>
+      <input
+        type="number"
+        class="form-control"
+        name="modelYear"
+        formControlName="modelYear"
+        placeholder="ex: 2019"
+        id="modelYear"
+      />
+    </div>
+    <div class="input">
+      <label for="numberOfKilometer">Kilométrage:</label>
+      <input
+        type="number"
+        class="form-control"
+        name="numberOfKilometer"
+        formControlName="numberOfKilometer"
+        placeholder="ex: 100200"
+        id="numberOfKilometer"
+      />
+    </div>
+    <div class="input">
+      <label for="price">Prix (en €):</label>
+      <input
+        type="number"
+        class="form-control"
+        name="price"
+        formControlName="price"
+        placeholder="ex: 29000"
+        id="price"
+      />
+    </div>
+  </div>
+  <button class="success-button" id="save">
+    <span *ngIf="loading" class="loader"></span>
+    <span *ngIf="!loading">Enregistrer</span>
+  </button>
+</form>

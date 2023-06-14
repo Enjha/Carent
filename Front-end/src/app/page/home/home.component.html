@@ -1,7 +1,7 @@
 <div class="container">
   <h2 style="font-size: 40px;">Liste des clients</h2>
-  <button type="button" class="success-button" id="add-customer" routerLink="/create">Créer un client</button>
-  <div id="customers-list">
+  <button type="button" class="btn btn-success" id="add-car" routerLink="/create">Créer une voiture</button>
+  <div id="customers-list" style="margin: 40px 10px; font-size: 20px">
     <div id="customer" *ngFor="let car of cars">
       <a id="fullName" routerLink="/{{car.id}}/">
         {{car.brand}}

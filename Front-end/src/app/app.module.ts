@@ -8,18 +8,24 @@ import { HomeComponent } from './page/home/home.component';
 import {CarService} from "./service/car.service";
 import {HttpClientModule} from "@angular/common/http";
 import { CarDetailComponent } from './page/car-detail/car-detail.component';
+import { CarCreateComponent } from './page/car-create/car-create.component';
+import { CarFormComponent } from './form/car-form/car-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    CarCreateComponent,
+    CarFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [CarService],
   bootstrap: [AppComponent]
