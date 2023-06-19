@@ -1,12 +1,11 @@
 package fr.enjha.service.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="cars")
+@Table(name="Cars")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Car {
@@ -14,12 +13,25 @@ public class Car {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
-    private String brand;
-    private String model;
-    private int modelYear;
-    private int numberOfKilometer;
-    private int price;
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
+    private Person owner;
+
+    @Column(name = "brand", nullable = false)
+    private String brand;
+
+    @Column(name = "model", nullable = false)
+    private String model;
+
+    @Column(name = "model_year", nullable = false)
+    private int modelYear;
+
+    @Column(name = "number_of_kilometer", nullable = false)
+    private int numberOfKilometer;
+
+    @Column(name = "price", nullable = false)
+    private int price;
 
     public void setId(int id) {
         this.id = id;
@@ -28,6 +40,15 @@ public class Car {
     public int getId() {
         return id;
     }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
     public String getBrand() {
         return brand;
     }

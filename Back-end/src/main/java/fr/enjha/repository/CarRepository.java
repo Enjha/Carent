@@ -1,11 +1,13 @@
 package fr.enjha.repository;
 
 import fr.enjha.service.model.Car;
+import fr.enjha.service.model.Person;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +15,7 @@ import java.util.Optional;
 @Repository
 public interface CarRepository extends CrudRepository<Car, Integer> {
     Optional<List<Car>> findCarsByBrand(String brand);
+    Optional<List<Car>> findCarsByOwner(Person owner);
     @Query("SELECT c FROM Car c " +
             "WHERE c.brand LIKE %:brand%" +
             "AND c.model LIKE %:model%" +
