@@ -5,6 +5,7 @@ export type Car = {
   modelYear: number;
   numberOfKilometer: number;
   price: number;
+  imageUrl: string;
 }
 
 export type Cars = Car[];

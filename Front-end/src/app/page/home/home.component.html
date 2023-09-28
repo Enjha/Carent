@@ -1,14 +1,20 @@
+<link rel="stylesheet" href="home.component.css">
 <div class="container">
-  <h2 style="font-size: 40px;">Liste des clients</h2>
-  <button type="button" class="btn btn-success" id="add-car" routerLink="/create">Créer une voiture</button>
-  <div id="customers-list" style="margin: 40px 10px; font-size: 20px">
-    <div id="customer" *ngFor="let car of cars">
-      <a id="fullName" routerLink="/{{car.id}}/">
-        {{car.brand}}
-      </a>
-      <label>
-        {{car.model}}
-      </label>
+  <h2 style="font-size: 40px;">Toutes les annonces</h2>
+  <div class="panel">
+    <div class="sort">
+      <label for="brand">Marque</label>
+      <select id="brand">Test</select>
+    </div>
+    <div id="cars-list">
+      <div id="car" *ngFor="let car of cars">
+        <img class="imageCar" *ngIf="car.imageUrl" src="{{car.imageUrl}}">
+        <img class="imageCar" *ngIf="!car.imageUrl"  src="/assets/resources/library/car/images/no-photo.png">
+        <label class="title-ad">
+          {{car.brand}} {{car.model}}
+        </label>
+        <p style="color: #8d8d8d">{{car.price}} €</p>
+      </div>
     </div>
   </div>
 </div>

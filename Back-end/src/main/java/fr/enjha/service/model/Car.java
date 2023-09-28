@@ -33,6 +33,9 @@ public class Car {
     @Column(name = "price", nullable = false)
     private int price;
 
+    @Column(name = "imageUrl")
+    private String imageUrl;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -87,5 +90,13 @@ public class Car {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -8,6 +8,8 @@ import fr.enjha.service.model.Person;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class DataPopulator {
 
@@ -21,6 +23,9 @@ public class DataPopulator {
 
     public void populateData() {
         Faker faker = new Faker();
+
+        String[] brandName = { "Audi", "BMW", "Honda", "Mercedes", "Toyota"};
+        Random random = new Random();
 
         // Créer des instances de Person
         Person person1 = new Person();
@@ -41,14 +46,15 @@ public class DataPopulator {
 
         Person person;
         for(int i=0;i<=20;i++){
+
             if(i<10)
                 person = person1;
             else
                 person = person2;
             Car car = new Car();
             car.setOwner(person);
-            car.setBrand(faker.name().name());
-            car.setModel(faker.name().name());
+            car.setBrand(brandName[random.nextInt(brandName.length - 1)]);
+            car.setModel("model " + random.nextInt(7));
             car.setModelYear(faker.date().birthday().getYear());
             car.setNumberOfKilometer(faker.number().numberBetween(20000,300000));
             car.setPrice(faker.number().numberBetween(500, 100000));
